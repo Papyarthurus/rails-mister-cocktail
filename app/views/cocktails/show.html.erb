@@ -8,9 +8,12 @@
 
 <h4>Ingredient</h4>
 
-<% @cocktail.ingredients.each do |ingredient| %>
-  <p><%= ingredient.name %></p>
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description %></p>
+  <p><%= dose.ingredient.name %></p>
+  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure ?" } do %><i class="fa fa-trash-o"></i><% end %>
 <% end %>
+
 
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
 <%= link_to 'New dose', new_cocktail_dose_path(@cocktail) %> |

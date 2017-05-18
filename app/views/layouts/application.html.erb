@@ -13,6 +13,24 @@
   </head>
 
   <body>
+
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <li><%= link_to 'COCKTAIL HOUSE', cocktails_path, class: 'navbar-logo' %></li>
+
+      <!-- Search form -->
+      <form action="" class="navbar-wagon-search">
+        <input type="text" class="navbar-wagon-search-input" placeholder="Search for a place">
+        <button type="submit" class="navbar-wagon-search-btn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+
+
+      <!-- Button (call-to-action) -->
+      <%= link_to 'New cocktail', new_cocktail_path(@article), class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
