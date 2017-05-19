@@ -10,10 +10,6 @@
         <div class="card-name">
           <h2><%= cocktail.name %></h2>
         </div>
-        <div class="card-features list-inline">
-          <%= link_to 'Edit', edit_cocktail_path(cocktail), class: "features-style" %> |
-          <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: "features-style" %>
-        </div>
         <%= link_to '', cocktail, class: "card-link" %>
       </div>
     </div>
