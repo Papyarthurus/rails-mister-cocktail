@@ -10,9 +10,11 @@ require 'json'
 require 'pry'
 
 puts 'Cleaning database...'
+Dose.destroy_all
 Ingredient.destroy_all
+Cocktail.destroy_all
 
-puts 'Creating restaurants...'
+puts 'Creating ingredients...'
 # Parsing JSON
 filepath    = Rails.root.to_s + '/db/data/ingredients.json'
 
@@ -26,8 +28,51 @@ ingredients['drinks'].each do |ingredient|
   Ingredient.create!(name: ingredient['strIngredient1'])
 end
 
+puts 'Creating cocktails...'
+
+cocktails_attributes = [
+  {
+    name:         "Cuba Libre",
+  },
+  {
+    name:         "Sex on the Beach",
+  },
+  {
+    name:         "Virgin Island",
+  },
+  {
+    name:         "Capirinha",
+  },
+  {
+    name:         "Long Island",
+  },
+  {
+    name:         "White russian",
+  },
+  {
+    name:         "Pink russian",
+  },
+  {
+    name:         "Tequila Sunrise",
+  },
+  {
+    name:         "Mojita",
+  },
+  {
+    name:         "Margarita",
+  },
+  {
+    name:         "Cosmopolitan",
+  },
+  {
+    name:         "Blue Lagoon",
+  },
+  {
+    name:         "Planteur",
+  },
+]
+
+Cocktail.create!(cocktails_attributes)
+
+
 puts 'Finished!'
-
-
-
-

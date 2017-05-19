@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="container">
 <p>
-  <strong>Name:</strong>
   <%= @cocktail.name %>
 </p>
 
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+
+<%= show_photo(@cocktail) %>
 
 <h4>Ingredient</h4>
 
@@ -19,3 +21,4 @@
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
 <%= link_to 'New dose', new_cocktail_dose_path(@cocktail) %> |
 <%= link_to 'Back', cocktails_path %>
+</div>

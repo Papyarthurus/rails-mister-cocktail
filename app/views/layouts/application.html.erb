@@ -16,12 +16,12 @@
 
     <div class="navbar-wagon">
       <!-- Logo -->
-      <li><%= link_to 'COCKTAIL HOUSE', cocktails_path, class: 'navbar-logo' %></li>
+      <%= link_to 'COCKTAIL HOUSE', cocktails_path, class: 'navbar-logo' %>
 
       <!-- Search form -->
-      <form action="" class="navbar-wagon-search">
-        <input type="text" class="navbar-wagon-search-input" placeholder="Search for a place">
-        <button type="submit" class="navbar-wagon-search-btn">
+      <form action="/cocktails" method="get" class="navbar-wagon-search">
+        <input type="text" name="query" class="navbar-wagon-search-input" placeholder="Search for a place">
+        <button type="submit" class="navbar-wagon-search-btn" >
           <i class="fa fa-search"></i>
         </button>
       </form>
@@ -29,6 +29,14 @@
 
       <!-- Button (call-to-action) -->
       <%= link_to 'New cocktail', new_cocktail_path(@article), class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+
+    <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('./assets/images/images.jpeg');">
+      <div class="banner-content">
+        <h1>COCKTAILIZE YOUR LIFE</h1>
+        <p>Revisit amazing cocktails from all over the worl.</p>
+        <a class="btn btn-primary btn-lg"><i class="fa fa-glass"></i>  Let's go </a>
+      </div>
     </div>
 
     <%= yield %>
